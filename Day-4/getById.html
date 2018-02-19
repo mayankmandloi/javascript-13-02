@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #main
+    {
+        transition-duration: 2s;
+    }
+    </style>
+</head>
+<body>
+    <div id="main" onclick="changeele()">Hello from Web Bhumi</div>
+    <button onclick="test()">Click me</button>
+</body>
+<script>
+    function changeele(){
+    var ele=document.getElementById("main");
+    ele.style.color="green";
+    ele.style.fontFamily="Sans-serif";
+    ele.style.fontSize="200px";
+    console.log(ele);
+    }
+
+    function test()
+    {
+        var ele=document.getElementById("main");
+        ele.style.display="none";
+    }
+</script>
+</html>
