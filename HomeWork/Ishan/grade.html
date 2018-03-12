@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+
+<body>
+	<input value="" type="text" name="" id="grade">
+	<button onclick="calculate()">Click</button>
+</body>
+
+	<script>
+
+		function calculate(){
+		var a = document.getElementById("grade");
+		var value = 1*a.value;
+		
+			if (value>=80&&value<=100)
+			{
+				window.alert("Grade- A");
+			}
+
+			else if(value>=60&&value<80)
+			{
+				window.alert("Grade- B");
+			}
+
+			else if(value>=40&&value<60)
+			{
+				window.alert("Grade- C");
+			}
+
+			else if(value>=30&&value<40)
+			{
+				window.alert("Grade- D");
+			}
+
+			else if(value<30)
+			{
+				window.alert("Grade- F");
+			}
+
+			else
+			{
+				window.alert("Not Defined");
+			}
+		}
+	</script>
+</html>
