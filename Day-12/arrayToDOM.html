@@ -14,12 +14,12 @@
 
 
  var persons=[
-     {name:"Ishan",number:23456,age:24},
-     {name:"Hema",number:233445,age:23},
-     {name:"Ruchi",number:87346,age:20},
-     {name:"Shruti",number:87676,age:22},
-     {name:"Madhuri",number:87676,age:21},
-     {name:"Aasish",number:12345,age:22}
+     {name:"Ishan",number:23456,age:24,Address:"Ramnager",},
+     {name:"Hema",number:233445,age:23, Address:"tilaknager"},
+     {name:"Ruchi",number:87346,age:20, Address:"palasiya",},
+     {name:"Shruti",number:87676,age:22, Address:"L.I.G",},
+     {name:"Madhuri",number:87676,age:21, Address:"bapat",},
+     {name:"Aasish",number:12345,age:22, Address:"geetanager",}
      ];
 
      function showData()
@@ -27,7 +27,7 @@
 
         for(i=0;i<persons.length;i++)
         {
-         var str = "name:-"+persons[i].name+" number:- "+persons[i].number+" age:- "+persons[i].age+"<br>";
+         var str = "name:-"+persons[i].name+" number:- "+persons[i].number+" age:- "+persons[i].age+" Address:- "+persons[i].Address+"<br>";
          document.getElementById("demo").innerHTML= document.getElementById("demo").innerHTML+str;
         }
      }
