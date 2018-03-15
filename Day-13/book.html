@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="main"></div>
+</body>
+
+<script>
+var Books=[{"ID":3398759608,"Title":"MySQL Stored Procedure Programming","SubTitle":"Building High-Performance Web Applications in MySQL","Description":"MySQL Stored Procedure Programming covers a lot of ground. The book starts with a thorough introduction to stored procedures programming and functions, covering the fundamentals of data types, operators, and using SQL in stored procedures. You'll lea ...","Image":"http://s.it-ebooks-api.info/3/mysql_stored_procedure_programming.jpg","isbn":"9780596100896"},{"ID":3636763595,"Title":"PHP and MySQL 24-Hour Trainer","Description":"Assuming no previous experience with PHP or MySQL, this book is ideal reading for anyone who wants to go beyond HTML / CSS in order to provide clients with the most dynamic web sites possible. The approachable tone breaks down the basics of programmi ...","Image":"http://s.it-ebooks-api.info/2/php_and_mysql_24-hour_trainer.jpg","isbn":"9781118066881"},{"ID":4126030247,"Title":"Expert PHP and MySQL","Description":"As the world's most popular, general purpose, open source scripting language, PHP is frequently used with MySQL to create high-traffic, mission-critical applications. This indispensable book shares proven, author-tested best practices and expert tech ...","Image":"http://s.it-ebooks-api.info/2/expert_php_and_mysql.jpg","isbn":"9780470563120"},{"ID":2725483026,"Title":"Beginning PHP 6, Apache, MySQL 6 Web Development","Description":"Apache, MySQL and PHP are each complex in and of themselves, and it's impossible for this book to cover every advanced detail of all three. The purpose of this book is to give you the best possible foundation for understanding how each of the core co ...","Image":"http://s.it-ebooks-api.info/2/beginning_php_6_apache_mysql_6_web_development.jpg","isbn":"9780470391143"},{"ID":869476162,"Title":"PHP and MySQL For Dummies, 3rd Edition","Description":"Been thinking of creating a high-quality interactive Web site? This book is just what you need to get started! Here's the fun and easy way(r) to develop a Web application in PHP 4, 5, or 6 and MySQL 5, test your software, enable your Web pages to dis ...","Image":"http://s.it-ebooks-api.info/9/php_and_mysql_for_dummies_3rd_edition.jpg","isbn":"9780470096000"},{"ID":1096327173,"Title":"PHP 6 and MySQL 6 Bible","Description":"MySQL is the leading open source database on the market and PHP continues to dominate the server side of the scripting market - together, they are the most popular and common team for creating dynamic, database-driven web sites. This comprehensive bo ...","Image":"http://s.it-ebooks-api.info/9/php_6_and_mysql_6_bible.jpg","isbn":"9780470384503"},{"ID":1257472294,"Title":"PHP and MySQL Web Development, 4th Edition","Description":"PHP and MySQL are popular open-source technologies that are ideal for quickly developing database-driven Web applications. PHP is a powerful scripting language designed to enable developers to create highly featured Web applications quickly, and MySQ ...","Image":"http://s.it-ebooks-api.info/10/php_and_mysql_web_development_4th_edition.jpg","isbn":"9780672329166"},{"ID":991677443,"Title":"Expert PHP and MySQL","SubTitle":"Application Design and Development","Description":"Expert PHP and MySQL takes you beyond learning syntax to showing you how to apply proven software development methods to building commerce-grade PHP and MySQL projects that will stand the test of time and reliably deliver on customer needs.nnDevelo ...","Image":"http://s.it-ebooks-api.info/6/expert_php_and_mysql.jpg","isbn":"9781430260073"},{"ID":3283547407,"Title":"Practical PHP and MySQL Website Databases","SubTitle":"A Simplified Approach","Description":"Practical PHP and MySQL Website Databases is a project-oriented book that demystifies building interactive, database-driven websites. The focus is on getting you up and running as quickly as possible. In the first two chapters you will set up your de ...","Image":"http://s.it-ebooks-api.info/6/practical_php_and_mysql_website_databases.jpg","isbn":"9781430260769"},{"ID":2067900885,"Title":"Beginning PHP and MySQL E-Commerce, 2nd Edition","SubTitle":"From Novice to Professional","Description":"Beginning PHP and MySQL E-Commerce: From Novice to Professional, Second Edition covers every step of the design and building process involved in creating powerful, extendable e-commerce web sites. Based around a real-world example involving a web sit ...","Image":"http://s.it-ebooks-api.info/6/beginning_php_and_mysql_e-commerce_2nd_edition.jpg","isbn":"9781590598641"}];
+console.log(Books);
+
+// code to create a element
+// var head1=document.createElement("h1");
+// head1.innerHTML="Web Bhumi";
+// document.getElementById("main").appendChild(head1);
+
+for(i=0;i<Books.length;i++)
+{
+    var head1=document.createElement("h1");
+    head1.innerHTML=Books[i].Title;
+    document.getElementById("main").appendChild(head1);
+}
+
+</script>
+</html>
