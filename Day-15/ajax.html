@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Using the XMLHttpRequest Object</h2>
+
+<div id="demo">
+<button type="button" onclick="loadXMLDoc()">Change Content</button>
+</div>
+
+<script>
+function loadXMLDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      console.log(this.responseText);
+      console.log("-----------------------------------");
+      console.log(JSON.parse(this.responseText));
+    }
+  };
+  xhttp.open("GET", "http://it-ebooks-api.info/v1/search/php", true);
+  xhttp.send();
+}
+</script>
+
+</body>
+</html>
