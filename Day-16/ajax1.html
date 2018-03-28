@@ -12,17 +12,19 @@ function ruchi() {
       var Data=JSON.parse(this.responseText);
       var Books = Data.Books;
       for(i=0;i<Books.length;i++)
-{
-  var head1 = document.createElement("h1");
-  head1.innerHTML=Books[i].Title;
-  document.getElementById("main").appendChild(head1);
+  {
+    var head1 = document.createElement("h1");
+    head1.innerHTML=Books[i].Title;
+    document.getElementById("main").appendChild(head1);
+
     var p1=document.createElement("p");
     p1.innerHTML=Books[i].Description;
     document.getElementById("main").appendChild(p1);
-     var image1=document.createElement("img");
+
+    var image1=document.createElement("img");
     image1.src=Books[i].Image;
     document.getElementById("main").appendChild(image1);
-}
+  }
     }
   };
   var str = document.getElementById("inp").value;
