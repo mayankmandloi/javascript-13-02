@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Web Bhumi</title>
+    <style>
+    .main
+        {
+            width: 50%;
+            margin: auto;
+            text-align: center;
+
+        }
+    .main>.top-div
+    {
+        height: 130px;
+    background-color: rgba(125,125,125,0.3);
+    border-bottom: 1px solid black;
+
+    }
+    .main>.top-div>img
+    {
+        border-radius: 50%;
+    width: 140px;
+    margin-top: 40px;
+    }
+    .bottom-div
+    {
+        color: #777;
+    }
+    .bottom-div>p
+    {
+        margin-top: 60px;
+    }
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="main">
+    <div class="top-div">
+        <img src="" alt="" id="image">
+    </div>
+    <div class="bottom-div">
+            <p id="info">Hi, My name is</p>
+            <h1 id="maindata"></h1>
+            <div>
+                <span onmouseover="setData('name')">Name</span>
+                <span onmouseover="setData('email')">Email</span>
+                <span onmouseover="setData('dob')">DOB</span>
+                <span onmouseover="setData('address')">Address</span>
+                <span onmouseover="setData('contact')">Contact</span>
+                <span onmouseover="setData('password')">Password</span>
+            </div>
+        </div>
+</div>
+
+</body>
+<!-- <script src="person.js"></script> -->
+<script>
+function loadXMLDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+     user=JSON.parse(this.responseText);
+     console.log(user.results[0]);
+     user=user.results[0];
+    document.getElementById("image").src=user.picture.large;
+    document.getElementById("maindata").innerHTML=user.name.first+" "+user.name.last;
+    }
+  };
+  xhttp.open("GET", "https://randomuser.me/api", true);
+  xhttp.send();
+}
+loadXMLDoc();
+
+
+function setData(value)
+{
+    if (value=='name')
+    {
+    document.getElementById("info").innerHTML="Hi, My name is";
+    document.getElementById("maindata").innerHTML=user.name.first+" "+user.name.last;
+    }
+    if (value=='email')
+    {
+    document.getElementById("info").innerHTML="Hi, My email is";
+    document.getElementById("maindata").innerHTML=user.email;
+    }
+    if (value=='dob')
+    {
+    document.getElementById("info").innerHTML="Hi, My DOB is";
+    document.getElementById("maindata").innerHTML=user.dob
+    }
+    if (value=='address')
+    {
+    document.getElementById("info").innerHTML="Hi, My address is";
+    document.getElementById("maindata").innerHTML=user.location.street;
+    }
+    if (value=='contact')
+    {
+    document.getElementById("info").innerHTML="Hi, My number is";
+    document.getElementById("maindata").innerHTML=user.cell;
+    }
+    if (value=='password')
+    {
+    document.getElementById("info").innerHTML="Hi, My password is";
+    document.getElementById("maindata").innerHTML=user.login.password;
+    }
+}
+</script>
+</html>
