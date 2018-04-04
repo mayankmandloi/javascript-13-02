@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title>Slider</title>
+			<style>
+				.slider
+				{
+					width: 800px;
+					margin: auto;
+					position: relative;
+					overflow: hidden;
+					height: 375px;
+				}
+			.sliderimages
+			{
+				height: 375px;
+				width: 800px;
+				position: absolute;
+				right: 100%;
+				transition:1s cubic-bezier(1, -0.85, 0.07, 2.92)
+			}
+			</style>
+		</head>
+
+		<body style="text-align:center;">
+			<div class="slider">
+			<img src="image_1.jpg" class="sliderimages">
+			<img src="image_2.jpg" class="sliderimages">
+			<img src="image_3.jpg" class="sliderimages">
+			<img src="image_4.jpg" class="sliderimages">
+			<img src="image_5.jpg" class="sliderimages">
+			
+
+		</div>
+		</body>
+
+		<script type="text/javascript">
+		var i=0;	
+		var sliderImages = document.getElementsByClassName("sliderimages");
+			for(j=0;j<sliderImages.length;j++)
+			{
+				sliderImages[j].style.right="100%"	
+			}
+			var sign="+";
+		setInterval(function(){
+			if(i==sliderImages.length)
+			{
+				sign="-";
+			}
+			if(i==0)
+			{
+				sign="+";
+			}
+			if(sign=="+")
+			{
+			sliderImages[i].style.right="0%";
+			sliderImages[i].style.transform="rotate(360deg)";
+			i++;
+			}
+			if(sign=="-")
+			{
+			i--;
+			sliderImages[i].style.right="100%";
+			sliderImages[i].style.transform="rotate(0deg)";
+			}
+		},1000)
+		</script>
+</html>
