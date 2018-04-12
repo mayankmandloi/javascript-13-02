@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+<body>
+    <div class="container" id="main">
+
+    </div>
+</body>
+<script>
+   
+        var ele = window.document.createElement("p");
+        ele.innerHTML="some random data some random data some random data some random data ";
+        ele.setAttribute("data-target","main");
+        ele.addEventListener("click",function(){
+            window.alert(ele.getAttribute("data-target"));
+        })
+        
+
+
+        document.getElementById("main").appendChild(ele);
+
+</script>
+</html>

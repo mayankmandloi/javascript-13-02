@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+.droptarget {
+    float: left; 
+    width: 100px; 
+    height: 35px;
+    margin: 15px;
+    padding: 10px;
+    border: 1px solid #aaaaaa;
+}
+</style>
+</head>
+<body>
+
+<p>This example uses the HTML DOM to assign "ondragstart", "ondrag", "ondragover" and "ondrop" events to the document object.</p>
+
+<p>Drag the p element back and forth between the two rectangles:</p>
+
+<div class="droptarget">
+  <p id="dragtarget" draggable="true" style="color:green">Drag meee!</p>
+</div>
+
+<div class="droptarget"></div>
+
+<p style="clear:both;"><strong>Note:</strong> drag events are not supported in Internet Explorer 8 and earlier versions or Safari 5.1 and earlier versions.</p>
+
+<p id="demo"></p>
+
+<script>
+/* Events fired on the drag target */
+document.ondragstart = function(event) {
+    console.log(event.target);
+    event.dataTransfer.setData("ishan", event.target.id);
+};
+
+document.ondrag = function(event) {
+    document.getElementById("demo").innerHTML += "The p element is being dragged<br>";
+};
+
+/* Events fired on the drop target */
+document.ondragover = function(event) {
+    event.preventDefault();
+    console.log(event.target);
+    
+};
+
+document.ondragenter = function(event) {
+    event.preventDefault();
+};
+
+document.ondrop = function(event) {
+    event.preventDefault();
+    console.log(event.target);
+    if ( event.target.className == "droptarget" ) {
+        var data = event.dataTransfer.getData("ishan");
+        event.target.appendChild(document.getElementById(data));
+        document.getElementById("demo").innerHTML = "The p element was dropped";
+    }
+};
+</script>
+
+</body>
+</html>
