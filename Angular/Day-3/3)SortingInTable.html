@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    table,th,td
+    {
+        border: 3px dotted black;
+        border-collapse: collapse;
+    }
+    th,td
+    {
+        padding: 5px;
+        text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <div ng-app="personModule">
+
+        <div ng-controller="personController">
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th ng-click="setOrder('name')">Name</th>
+                            <th ng-click="setOrder('number')">Number</th>
+                            <th ng-click="setOrder('age')">Age</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="person in persons|orderBy:orderData">
+                            `<td>{{person.name}}</td>
+                            <td>{{person.number}}</td>
+                            <td>{{person.age}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../js/angular.min.js"></script>
+<script>
+    var app = angular.module("personModule",[]);
+    app.controller("personController",function($scope){
+        $scope.persons=[{name:"Ishan",number:567898765,age:24},{name:"Mayank",number:2342342342,age:29},{name:"Nirupama",number:768567567567,age:27},{name:"Meenal",number:23464346,age:24},{name:"Antim",number:45645644,age:24},{name:"Manju",number:452342356,age:24},{name:"Dimple",number:523423234,age:25},{name:"Kanupriya",number:2343453,age:25}];
+        $scope.setOrder= function(para)
+        {
+            if($scope.orderData==para)
+            {
+                $scope.orderData= "-"+para;
+            }
+            else
+            {
+                $scope.orderData=para;
+            }
+
+        }
+        
+    });
+</script>
+</html>

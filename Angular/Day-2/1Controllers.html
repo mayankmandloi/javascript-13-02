@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Controllers</title>
+    <script src="../js/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="MyModule">
+            <div ng-controller="myController">
+                <input type="text" ng-model="name">
+               <br> 
+               {{name}}
+            </div>
+            <hr><hr>
+            <div ng-controller="myController">
+                <input type="text" ng-model="name">
+               <br> 
+               {{name}}
+            </div>
+            
+    </div>
+</body>
+<script>
+    var app = angular.module("MyModule",[])
+    app.controller("myController",function($scope){
+        $scope.name="Web Bhumi";
+    });
+</script>
+</html>
