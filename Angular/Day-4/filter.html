@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    
+    table,td,th 
+    {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    </style>
+</head>
+<body ng-app="myModule">
+    <div ng-controller="myController">
+<table>
+    <thead>
+        <tr>
+            <th ng-click="vari='name'">Name</th>
+            <th ng-click="vari='number'">number</th>
+            <th ng-click="vari='age'">age</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="person in persons|orderBy:vari">
+            <td>{{person.name}}</td>
+            <td>{{person.number}}</td>
+            <td>{{person.age}}</td>
+
+        </tr>
+    </tbody>
+</table>
+
+<hr><hr><hr>
+
+<input type="text" ng-model="search">
+<table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th >number</th>
+                <th>age</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="person in persons|filter:search">
+                <td>{{person.name}}</td>
+                <td>{{person.number}}</td>
+                <td>{{person.age}}</td>
+    
+            </tr>
+        </tbody>
+    </table>
+    <hr><hr><hr><hr><hr><hr>
+    <input type="range" name="" id="" min="0" max="4" ng-model="limi">
+    {{limi}}
+    <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>number</th>
+                    <th>age</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="person in persons|limitTo:limi">
+                    <td>{{person.name}}</td>
+                    <td>{{person.number}}</td>
+                    <td>{{person.age}}</td>
+        
+                </tr>
+            </tbody>
+        </table>
+        
+    </div>
+</body>
+        <script src="../angular.min.js"></script>
+<script>
+    var app =angular.module("myModule",[]);
+    app.controller("myController",function($scope){
+        $scope.persons=[{name:"Ishan",number:"23456789",age:23},{name:"Shruti",number:"9876543",age:23},{name:"Meenal",number:"234564234234789",age:24},{name:"Shivam",number:"242563523452",age:21}];
+
+    })
+
+</script>
+</html>
