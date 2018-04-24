@@ -32,8 +32,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr ng-repeat="person in persons">
-                            `<td>{{person.name}}</td>
+                        <tr ng-repeat="person in persons|orderBy:'name'">
+                            <td>{{person.name}}</td>
                             <td>{{person.number}}</td>
                             <td>{{person.age}}</td>
                         </tr>

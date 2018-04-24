@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body ng-app="myModule">
+    <div>
+        <input type="text" ng-model="ammount">
+        <input type="range"  ng-model="ammount" min="0" max="100">
+        <select ng-model="wb">
+                <option value="Rs" >Rs</option>
+                <option value="pound">Pound</option>
+                <option value="euro">Euro</option>
+                <option value="yuan">Yuan</option>
+        </select>
+        {{ammount|tors:wb}}
+    </div>
+</body>
+<script src="../js/angular.min.js"></script>
+<script>
+var app = angular.module("myModule",[]);
+app.filter("tors",function(){
+    return function(inp,cur)
+    {
+        var ans;
+        if(cur=="Rs")
+        {
+        ans = inp*66.34;
+        ans = "Rs "+ans;
+        }
+
+        if(cur=="pound")
+        {
+        ans = inp*0.72;
+        ans = "pound "+ans;
+        }
+
+        if(cur=="euro")
+        {
+        ans = inp*0.82;
+        ans = "euro "+ans;
+        }
+
+        if(cur=="yuan")
+        {
+        ans = inp*6.31;
+        ans = "yuan "+ans;
+        }
+        return ans;
+    }
+})
+
+</script>
+</html>
