@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../angular.min.js"></script>
+    <script src="./movies.js"></script>
+    <style>
+    .movie
+    {
+        display: inline-block;
+        width: 30%;
+        height: 400px;
+        overflow:auto;
+    }
+    </style>
+</head>
+<body ng-app="bookModule">
+    
+<div ng-controller="myController">
+<div class="movie" ng-repeat="picture in pictures">
+    <h1>{{picture.Title|uppercase}}</h1>
+    <img ng-src={{picture.PosterPath}} alt="">
+    <p>{{picture.Description}}</p>
+</div>
+</div>
+</body>
+
+<script>
+
+    var app = angular.module("bookModule",[]);
+    app.controller("myController",function($scope){
+        $scope.pictures = movie;
+    })
+</script>
+</html>
