@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="sal">
+    <button onclick="calculate()">Calculate</button>
+    <p id="target"></p>
+</body>
+
+<script>
+     var str="";
+    function calculate()
+    {
+        var exp = 1*document.getElementById("sal").value;
+       
+        switch(exp)
+        {
+            case 0:
+            alert("Salary is 5000");
+            str=str+" Salary is 5000</br>";
+            break;
+            case 5:
+            alert("Salary is 10000");
+            str+=" Salary is 10000</br>";
+            break;
+            case 10:
+            alert("Salary is 15000");
+            str+=" Salary is 15000</br>";
+            break;
+            case 15:
+            alert("Salary is 20000");
+            str+=" Salary is 20000</br>";
+            break;
+            default :
+            alert("Sorry Wrong Choice");
+            str+=" Sorry Wrong Choice</br>";
+
+        }
+    document.getElementById("target").innerHTML=str;
+    }
+
+</script>
+</html>

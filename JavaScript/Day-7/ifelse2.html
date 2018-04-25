@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    h1
+    {
+        transition-duration: 3s;
+    }
+    </style>
+</head>
+<body>
+    <input type="number" name="" id="inp" >
+    <button onclick="check()">Check</button>
+    <h1 id="target"></h1>
+</body>
+<script>
+function check()
+{
+    var inp = document.getElementById("inp");
+    var age = inp.value;
+    var tar = document.getElementById("target");
+    if(age>=18)
+    {
+        tar.style.backgroundColor="lightgreen";
+        tar.style.border="1px solid green";
+        tar.innerHTML="Eligible";
+       
+    }
+    else
+    {
+
+        tar.style.backgroundColor="red";
+        tar.innerHTML="Not Eligible";
+               
+    }
+   
+}
+
+function greatestOf3 ()
+{
+    var inp1,inp2,inp3;
+    if(inp1>inp2)
+    {   
+        if(inp1>inp3)
+        {
+                inp1;
+        }
+        else
+        {
+                inp3;
+        }
+
+    }
+    else
+    {
+        if(inp2>inp3)
+        {
+                inp2
+        }
+        else
+        {
+                inp3;
+        }
+    }
+}
+
+</script>
+</html>

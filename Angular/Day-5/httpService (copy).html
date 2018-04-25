@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .book{
+        display: inline-block;
+        width: 30%;
+        height: 400px;
+        overflow-y: scroll;
+    }
+    </style>
+</head>
+<body ng-app="myModule" ng-controller="myController">
+    <input type="text" ng-model="searchText">
+    <button ng-click="search()">Search</button>
+    <div ng-repeat="book in Books" class="book">
+        <h1>{{book.Title}}</h1>
+        <img src="{{book.Image}}" alt="">
+        <p>{{book.Description}}</p>
+    </div>
+</body>
+<script src="../js/angular.min.js"></script>
+<script>
+var app = angular.module("myModule",[]);
+app.controller("myController",function($scope,$http){
+    $scope.search= function(){
+$http.get("http://it-ebooks-api.info/v1/search/"+$scope.searchText).then(function success(res){
+    console.log(res);
+    $scope.Books=res.data.Books;
+},function failur(){})
+}
+})
+
+</script>
+</html>

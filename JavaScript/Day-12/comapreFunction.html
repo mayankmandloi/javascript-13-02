@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p id="main"></p>
+</body>
+
+<script>
+
+    var per1={name:"Aasish",number:12345,age:22};
+    var per2={name:"Ishan",number:23456,age:24};
+    var per3={name:"Hema",number:233445,age:23};
+    var per4={name:"Ruchi",number:87346,age:20};
+    var per5={name:"Shruti",number:87676,age:22};
+    var per6={name:"Madhuri",number:87676,age:21};
+    var persons=[per2,per3,per4,per5,per6,per1];
+    console.log(persons);
+    persons.sort(function(a,b){
+        return b.age-a.age;
+    });
+    for(i=0;i<persons.length;i++)
+    {
+    document.getElementById("main").innerHTML+="<br>"+persons[i].name;
+    }
+
+</script>
+</html>
