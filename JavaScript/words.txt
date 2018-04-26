@@ -1,0 +1,19 @@
+CLI 	Command Line Interface			
+NPM	Node Package Manager				
+website-scraper						
+boilerplate						
+bundle
+gem
+Bower							
+SCSS/SASS						
+SVN							
+CDN							
+Content Management System (CMS)		
+Cross Browser Testing				
+FTP	(FileZilla)						
+Hosting						
+Landing page						
+QA							
+Sitemap						
+SVG							
+Wireframe						

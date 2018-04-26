@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="value 1" id="inp1"> &nbsp; &nbsp;
+    <input type="text" placeholder="value 2" id="inp2"> &nbsp; &nbsp;
+    <input type="text" placeholder="value 3" id="inp3">
+    
+    <button onclick="greaterOf3()">click me</button><br>
+    
+</body>
+<script>
+
+    function greaterOf3(){
+        var inp1 = document.getElementById("inp1").value;
+        var inp2 = document.getElementById("inp2").value;
+        var inp3 = document.getElementById("inp3").value;
+
+    document.write("input 1 is == "+inp1+"<br>");
+    document.write("input 2 is == "+inp2+"<br>");
+    document.write("input 3 is == "+inp3+"<br>");
+    
+
+    if(inp1>inp2)
+    {   
+        if(inp1>inp3)
+        {
+              document.write(inp1);
+        }
+        else
+            {
+               document.write(inp3);
+        }
+
+    }
+    else
+    {
+        if(inp2>inp3)
+        {
+                document.write(inp2);
+        }
+        else
+        {
+             document.write(inp3);
+        }
+    }
+}
+
+</script>
+</html>

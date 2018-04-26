@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Input1</th>
+                <th>Input2</th>
+                <th>ANd (&&)</th>
+                <th>OR (||)</th>
+                <th>!</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>False</td>
+                <td>False</td>
+                <td>False</td>
+                <td>False</td>
+                <td>N/A</td>
+            </tr>
+            <tr>
+                <td>False</td>
+                <td>True</td>
+                <td>False</td>
+                <td>True</td>
+                <td>N/A</td>
+            </tr>
+            <tr>
+                <td>True</td>
+                <td>False</td>
+                <td>False</td>
+                <td>True</td>
+                <td>N/A</td>
+            </tr>
+            <tr>
+                <td>True</td>
+                <td>True</td>
+                <td>True</td>
+                <td>True</td>
+                <td>N/A</td>
+            </tr>
+        </tbody>
+    </table>
+    <input type="text" name="" id="marks">
+    <button onclick="caculate()">Calculate</button>
+</body>
+<script>
+
+    function caculate() {
+
+        var marks = 1 * document.getElementById("marks").value;
+        if (marks >= 80) {
+            window.alert("Grade A");
+        }
+        else if (marks >= 60 && marks < 80) {
+            window.alert("Grade B");
+        }
+        else if (marks >= 40 && marks < 60) {
+            window.alert("Grade c");
+        }
+        else if (marks >= 30 && marks < 40) {
+            window.alert("Grade D");
+        }
+        else if (marks < 30 && marks >= 0) {
+
+            window.alert("Grade F");
+        }
+        else {
+            window.alert("Sorry Wrong Input");
+        }
+    }
+</script>
+
+</html>

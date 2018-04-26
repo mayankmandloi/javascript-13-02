@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Web Bhumi</title>
+</head>
+<body>
+   <form action="#" novalidate>
+       <input type="text" name="fname" placeholder="first name" onblur="check(this)"><br>
+       <input type="text" name="lname" placeholder="last name" onblur="check(this)"><br>
+       <input type="email" name="email" placeholder="email" onblur="check(this)"><br>
+       <input type="password" name="password" placeholder="password" onblur="check(this)"><br>
+       <button type="submit">Save</button>
+   </form>
+
+</body>
+
+<script>
+    function check(ele)
+    {
+        if(ele.name=="fname")
+        {
+           var fname= /^[a-zA-Z]{3,20}$/;
+           if(fname.test(ele.value))
+           {
+               ele.style.border="";
+               ele.title="";
+           }
+           else
+           {
+               ele.style.border="1px solid red";
+               ele.title="No Symbols allowed must be 3 char long";
+
+           }
+        }
+        else if(ele.name=="lname")
+        {
+
+        }
+        else if(ele.name=="email")
+        {
+            var email=/^[a-z0-9]+([.]{0,1}[a-z0-9]+)*[@][a-z0-9]+[.][a-z]{2,5}$/i;
+            
+            
+        }
+        else if(ele.name=="password")
+        {
+            var password=/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+            
+        }
+    }
+</script>
+</html>

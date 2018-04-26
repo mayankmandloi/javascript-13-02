@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="main">
+    <button onclick="and1()">Ride-1</button>
+    <button onclick="or1()">Ride-2</button>
+
+</body>
+<script>
+
+function and1()
+{
+    var element = document.getElementById("main");
+    var value = element.value;
+    if(value>=18&&value<=65)
+    {
+        window.alert("You are eligible for ride-1");
+    }
+    else
+    {
+        window.alert("Sorry You are not Eligible");
+    }
+}
+
+function or1()
+{
+    var element = document.getElementById("main");
+    var value = element.value;
+    var height=window.prompt("Enter Your Hight in cm");
+    if(value>=18||height>=153)
+    {
+        window.alert("You are eligible for ride-2");
+    }
+    else
+    {
+        window.alert("Sorry You are not Eligible");
+    }
+}
+
+</script>
+
+</html>
