@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Web Bhumi</title>
+</head>
+<body ng-app="myModule">
+    <div ng-controller="myController">
+        <input type="text" ng-model="var1"> {{var1}}
+        <br>
+        <input type="text" ng-model="var2"> {{var2}}
+        <br>
+        <button ng-click="fun1()">Alert</button>
+        <wb-table-view inp1="var1" inp2="var1" ap="fun1()" ip="Input" op="Result"></wb-table-view>
+        <wb-table-view inp1="var1" inp2="var1" ap="fun1()" ip="Q" op="A"></wb-table-view>
+    </div>
+</body>
+<script src="../js/angular.min.js"></script>
+<script>
+
+    var app = angular.module("myModule",[]);
+    app.controller("myController",function($scope){
+        $scope.var1="Web Bhumi";
+        $scope.var2="Mayank";
+        $scope.fun1= function(){
+                window.alert("Haha");
+        }
+    });
+    app.directive("wbTableView",function(){
+        return {
+            template:"<table>\
+            <thead>\
+            <tr>\
+            <th>{{input}}</th>\
+            <th>{{output}}</th>\
+            </tr>\
+            </thead>\
+            <tbody>\
+            <tr>\
+            <td> <input type='text' ng-model='inp1'></td>\
+            <td>{{inp1}}</td>\
+            </tr>\
+            <tr>\
+            <td> <input type='text' ng-model='inp2'></td>\
+            <td>{{inp2}}</td>\
+            </tr>\
+            <tr>\
+            <td> Button</td>\
+            <td><button ng-click='aapnafunction()'>Alert</button></td>\
+            </tr>\
+            </tbody>\
+            </table>",
+            scope:{
+            inp1:'=',
+            inp2:'<',
+            aapnafunction:"&ap",
+            input:"@ip",
+            output:"@op"
+
+        }
+        }
+        
+    })
+</script>
+</html>
