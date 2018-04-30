@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body ng-app="myModule" ng-controller="myController">
+    <input type="text" ng-model="searchText">
+    <button ng-click="search()">Search</button>
+    <!-- <div ng-repeat="result in results" class="book"> -->
+    <h1>{{results.formatted_address}}</h1>
+    <!-- </div> -->
+</body>
+<script src="angular.min.js"></script>
+
+<script>
+    var app = angular.module("myModule",[]);
+    app.controller("myController",function($scope,$http){
+        $scope.search= function(){
+    $http.get("https://maps.googleapis.com/maps/api/geocode/json?address=" +$scope.searchText+ "&sensor=false").then(function success(res){
+        console.log(res);
+        $scope.results=res.data.results[0];
+    },function failur(){})
+    }
+    })
+    
+</script>
+
+</html>
