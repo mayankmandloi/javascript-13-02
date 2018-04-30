@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body ng-app="myModule">
+    <div ng-controller="myController">
+        {{naam}}<input type="text" ng-model="naam">
+        <my-directive name="naam"></my-directive>
+    </div>
+    
+</body>
+<script src="../js/angular.min.js"></script>
+<script>
+    var app = angular.module("myModule",[]);
+    app.controller("myController",function($scope){
+        $scope.naam="Mayank";
+    });
+    app.directive("myDirective",function(){
+        return {
+            template :"<h1>Hello My Name ia {{name}} </h1> <input type='text' ng-model='name'>",
+            scope:{name:"="}// =(variables 2-way), @(string), <(variables 1-way), &(functions),
+        }
+    })
+</script>
+</html>
