@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body ng-app="myModule">
+
+    <ul>
+        <li><a href="#!/brijesh">Brijesh</a></li>
+        <li><a href="#!/ishan">Ishan</a></li>
+        <li><a href="#!/shruti">Shruti</a></li>
+    </ul>
+    <ng-view></ng-view>
+
+
+
+
+
+    <script src="../js/angular.js"></script>
+    <script src="../js/angular-route.min.js"></script>
+    <script>
+    var app = angular.module("myModule",["ngRoute"])
+    app.config(function($routeProvider){
+        $routeProvider.when("/",{
+            templateUrl:"mypage.html",
+            controller:function($scope){
+                $scope.name="Dadu";
+                $scope.pageType="Simple Home Page"
+            }
+        })
+        .when("/brijesh",{
+            templateUrl:"mypage.html",
+            controller:function($scope){
+                $scope.name="Brijesh";
+                $scope.pageType="Awesome CSS Page"
+                }
+        })
+        .when("/ishan",{
+            templateUrl:"mypage.html",
+            controller:function($scope){
+                $scope.name="Ishan";
+                $scope.pageType="Typical JS Page"
+            }
+        })
+        .when("/shruti",{
+            templateUrl:"mypage.html",
+            controller:function($scope){
+                $scope.name="Shruti";
+                $scope.pageType="Single PHP Page"
+            }
+        })
+        .otherwise(
+            {template:"Sorry No Page"}
+        )
+    });
+    </script>
+</body>
+</html>
