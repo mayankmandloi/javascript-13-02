@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    h1
+    {
+        color:red;
+        text-shadow: 3px 3px 3px green;
+    }
+    </style>
+</head>
+<body ng-app="myModule">
+    <ng-view></ng-view>
+
+    <script src="../js/angular.js"></script>
+    <script src="../js/angular-route.js"></script>
+    <script>
+    var app=angular.module("myModule",["ngRoute"])
+    app.config(function($routeProvider){
+        $routeProvider.when("/",{
+            template:"<h1>Hello How are?</h1>"
+        })
+        $routeProvider.when("/welcome/:naam/:place",{
+            template:"<h1>Hello {{name}}, Welcome to my page</h1><h2>Are you from {{place}}</h2>",
+            controller:function($scope,$routeParams)
+            {
+                $scope.name=$routeParams.naam;
+                $scope.place=$routeParams.place;
+            }
+        })
+    })
+    </script>
+</body>
+</html>
