@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Movie DB</title>
+    <style>
+    .movie
+    {
+        display: inline-block;
+        width: 32%;
+    }
+    </style>
+</head>
+<body ng-app="movieModule">
+    <ng-view></ng-view>
+
+    <script src="../js/angular.js"></script>
+    <script src="../js/angular-route.js"></script>
+    <script src="./movies.js"></script>
+
+    <script>
+    var app= angular.module("movieModule",["ngRoute"])
+    app.config(function($routeProvider){
+        $routeProvider.when("/",{
+            templateUrl:"./template/viewall.html",
+            controller:function($scope){
+                $scope.Movies=movie;
+            }
+        })
+        .when("/movieedit/:id",{
+            templateUrl:"template/editMovie.html",
+            controller:function($scope,$routeParams)
+            {
+                $scope.id=$routeParams.id;
+                $scope.Movies=movie;
+                
+
+            }
+        })
+        .when("/movieview/:id",{
+            templateUrl:"template/viewMovie.html",
+            controller:function($scope,$routeParams)
+            {
+                $scope.id=$routeParams.id;
+                $scope.Movies=movie;
+                
+
+            }
+        })
+    })
+    </script>
+</body>
+</html>

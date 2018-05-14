@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>  
+<body ng-app="">
+
+<p>Try writing in the input field:</p>
+<p>{{myForm.myInput.$invalid && myForm.myInput.$dirty && myForm.myInput.$touched}}</p>
+<form name="myForm">
+<input type="text" ng-pattern="'[0-9]*'" name="myInput" ng-model="myInput" required>
+<span ng-show=" myForm.myInput.$invalid && myForm.myInput.$dirty && myForm.myInput.$touched">You Need to enter number</span>
+<input type="email" id="" required name="mail" ng-model="email">
+<input type="number" name="num" min="20" max="100000" required ng-model="phone">
+</form>
+
+<p>The input's valid state is:</p>
+<h1>valid {{myForm.myInput.$valid}}</h1>
+<h1>invalid {{myForm.myInput.$invalid}}</h1>
+<h1>touched {{myForm.myInput.$touched}}</h1>
+<h1>untouched {{myForm.myInput.$untouched}}</h1>
+<h1>pristine {{myForm.myInput.$pristine}}</h1>
+<h1>dirty {{myForm.myInput.$dirty}}</h1>
+<h1>error {{myForm.myInput.$error}}</h1>
+<h1>error {{myForm.mail.$error}}</h1>
+<h1>error {{myForm.num.$error}}</h1>
+<h1>Form error {{myForm.$error}}</h1>
+
+</body>
+</html>
